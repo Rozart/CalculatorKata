@@ -1,7 +1,7 @@
 # CalculatorKata
-TDD Calculator Kata
+TDD String Calculator Kata
 
-Implementation which is the result of going over the TDD Calculator Kata:
+Implementation which is the result of going over the TDD String Calculator Kata:
 
 1. An empty string returns zero
 2. A single number returns the value
