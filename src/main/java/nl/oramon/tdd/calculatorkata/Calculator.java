@@ -12,10 +12,6 @@ public class Calculator {
             return input;
         }
 
-        if (input.contains("-")) {
-            throw new CalculationException();
-        }
-
         String separator = selectSeparator(input);
         input = filterInput(input, separator);
         return sumNumbers(input, separator);
@@ -31,11 +27,16 @@ public class Calculator {
         return input;
     }
 
-    private String sumNumbers(String input, String separator) {
+    private String sumNumbers(String input, String separator) throws CalculationException {
         String[] splittedInput = input.split(separator);
         int result = 0;
         for (String s : splittedInput) {
             int tempNumber = Integer.valueOf(s);
+
+            if(tempNumber < 0){
+                throw new CalculationException();
+            }
+
             if (tempNumber > 1000) {
                 continue;
             }
